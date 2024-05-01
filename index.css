@@ -1,0 +1,63 @@
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10%;
+}
+
+.word-container{
+    display: flex;
+    gap: 15px;
+}
+
+.word-container>*{
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.filter-container{
+    display: flex;
+    gap: 20px;
+}
+
+.letters-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.letters-container>*{
+    font-size: 20px;
+}
+
+.btn-container{
+    display: flex;
+    gap: 30px;
+}
+
+.result-container{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.enable{
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.disable{
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.hidden{
+    display: none!important;
+}
