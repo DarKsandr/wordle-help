@@ -1,11 +1,11 @@
-import { getWords } from "./functions.js";
-import getWordContainer from './containers/word-container.js';
-import getResultContainer from './containers/result-container.js';
-import getLettersContainer from './containers/letters-container.js';
-import getFilterContainer from './containers/filter-container.js';
-import getBtnContainer from './containers/btn-container.js';
-import getSearchBtn from './buttons/search.js';
-import getResetBtn from './buttons/reset.js';
+import { getWords } from "./scripts/functions.js";
+import getWordContainer from './scripts/containers/word-container.js';
+import getResultContainer from './scripts/containers/result-container.js';
+import getLettersContainer from './scripts/containers/letters-container.js';
+import getFilterContainer from './scripts/containers/filter-container.js';
+import getBtnContainer from './scripts/containers/btn-container.js';
+import getSearchBtn from './scripts/buttons/search.js';
+import getResetBtn from './scripts/buttons/reset.js';
 
 (async function(){
     const app = document.getElementById('app');
