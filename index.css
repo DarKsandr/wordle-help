@@ -1,14 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #app{
+    margin: 0 auto;
+    display: grid;
+    max-width: 600px;
+    padding: 20px;
+    justify-items: center;
+    gap: 20px;
+}
+
+button {
+    border: 0;
+    padding: 5px 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 10%;
+    background-color: white;
+    box-shadow: 1px 1px 1px gray;
+    border-radius: 3px;
 }
 
 .word-container{
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .word-container>*{
@@ -16,21 +34,46 @@
     height: 40px;
     font-size: 40px;
     text-align: center;
+    padding: 0;
+    border: 0;
+    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 3px;
 }
 
-.filter-container{
+.word-main-container{
+    width: 100%;
+    overflow: auto;
+    display: grid;
+    justify-content: space-around;
+    padding: 5px;
+    gap: 20px;
+}
+
+.filter-total-container{
+    justify-content: center;
+}
+
+.filter-container, .filter-total-container{
     display: flex;
     gap: 20px;
 }
 
+.filter-container>*{
+    width: 40px;
+}
+
 .letters-container{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 .letters-container>*{
+    width: 30px;
+    height: 30px;
     font-size: 20px;
+    text-align: center;
 }
 
 .btn-container{
@@ -39,11 +82,11 @@
 }
 
 .result-container{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 20px;
-    max-height: 300px;
+    max-height: 35vh;
     overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .enable{

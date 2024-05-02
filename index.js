@@ -53,12 +53,17 @@ import getResetBtn from './scripts/buttons/reset.js';
 
     btnContainer.append(searchBtn, resetBtn);
 
-    app.append(wordContainer);
-    app.append(filterContainer);
-    app.append(filterTotalContainer);
-    app.append(lettersContainer);
-    app.append(...lettersFiltersContainer);
-    app.append(btnContainer);
-    app.append(resultContainer);
-    app.append(resultEmptyContainer);
+    const wordMainContainer = document.createElement('div');
+    wordMainContainer.classList.add('word-main-container')
+    wordMainContainer.append(wordContainer, filterContainer);
+
+    app.append(
+        wordMainContainer,
+        filterTotalContainer,
+        lettersContainer,
+        ...lettersFiltersContainer,
+        btnContainer,
+        resultContainer,
+        resultEmptyContainer
+    );
 })();
