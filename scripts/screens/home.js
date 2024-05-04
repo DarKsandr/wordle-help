@@ -19,7 +19,7 @@ export default function(app){
         const langContainer = document.createElement('div');
         const langText = document.createElement('div');
         langText.classList.add('title');
-        langText.innerHTML = 'Выберете язык для поиска слова';
+        langText.innerHTML = 'Выберите язык для поиска слова';
         langContainer.append(langText);
         Object.keys(alphabet).forEach(key => {
             const label = document.createElement('label');
