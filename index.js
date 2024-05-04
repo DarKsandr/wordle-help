@@ -4,6 +4,7 @@ import getResultContainer from './scripts/containers/result-container.js';
 import getLettersContainer from './scripts/containers/letters-container.js';
 import getFilterContainer from './scripts/containers/filter-container.js';
 import getBtnContainer from './scripts/containers/btn-container.js';
+import getLoaderContainer from './scripts/containers/loader-container.js';
 import getSearchBtn from './scripts/buttons/search.js';
 import getResetBtn from './scripts/buttons/reset.js';
 
@@ -15,6 +16,10 @@ import getResetBtn from './scripts/buttons/reset.js';
     if(isNaN(count) || count <= 0){
         location.reload();
     }
+
+    const {loaderContainer} = getLoaderContainer();
+
+    app.append(loaderContainer);
 
     //get words
     const items = await getWords()
@@ -56,6 +61,8 @@ import getResetBtn from './scripts/buttons/reset.js';
     const wordMainContainer = document.createElement('div');
     wordMainContainer.classList.add('word-main-container')
     wordMainContainer.append(wordContainer, filterContainer);
+
+    loaderContainer.remove();
 
     app.append(
         wordMainContainer,
