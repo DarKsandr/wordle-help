@@ -25,6 +25,12 @@ import getResetBtn from './scripts/buttons/reset.js';
     const items = await getWords()
         .then(elememts => elememts.filter(el => el.length === count));
 
+    if(items.length === 0){
+        alert(`Слов длиной ${count} отсутствуют!`);
+        location.reload();
+        return;
+    }
+
     //init input word
     const {wordContainer, wordInputs} = getWordContainer(count);
 
