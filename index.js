@@ -5,6 +5,7 @@ import getLettersContainer from './scripts/containers/letters-container.js';
 import getFilterContainer from './scripts/containers/filter-container.js';
 import getBtnContainer from './scripts/containers/btn-container.js';
 import getLoaderContainer from './scripts/containers/loader-container.js';
+import getErrorContainer from './scripts/containers/error-container.js';
 import getSearchBtn from './scripts/buttons/search.js';
 import getResetBtn from './scripts/buttons/reset.js';
 
@@ -22,8 +23,17 @@ import getResetBtn from './scripts/buttons/reset.js';
     app.append(loaderContainer);
 
     //get words
-    const items = await getWords()
-        .then(elememts => elememts.filter(el => el.length === count));
+    let items = [];
+    try {
+        items = await getWords()
+            .then(elememts => elememts.filter(el => el.length === count));
+    } catch (error) {
+        console.error(error);
+        loaderContainer.remove();
+        const {errorContainer} = getErrorContainer('Ошибка загрузки словаря.<br/> Попробуйте позже.');
+        app.append(errorContainer);
+        return;
+    }
 
     if(items.length === 0){
         alert(`Слов длиной ${count} отсутствуют!`);

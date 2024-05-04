@@ -105,6 +105,12 @@ button {
     display: none!important;
 }
 
+.error-container{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
 /* loader */
 .loader {
     width: fit-content;
