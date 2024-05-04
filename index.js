@@ -1,13 +1,6 @@
-import { getWords } from "./scripts/functions.js";
-import getWordContainer from './scripts/containers/word-container.js';
-import getResultContainer from './scripts/containers/result-container.js';
-import getLettersContainer from './scripts/containers/letters-container.js';
-import getFilterContainer from './scripts/containers/filter-container.js';
-import getBtnContainer from './scripts/containers/btn-container.js';
+import { getWords } from "./scripts/api.js";
 import getLoaderContainer from './scripts/containers/loader-container.js';
 import getErrorContainer from './scripts/containers/error-container.js';
-import getSearchBtn from './scripts/buttons/search.js';
-import getResetBtn from './scripts/buttons/reset.js';
 
 (async function(){
     const app = document.getElementById('app');
@@ -40,6 +33,25 @@ import getResetBtn from './scripts/buttons/reset.js';
         location.reload();
         return;
     }
+
+    //import modules
+    const [
+        {default: getWordContainer},
+        {default: getLettersContainer},
+        {default: getFilterContainer},
+        {default: getResultContainer},
+        {default: getBtnContainer},
+        {default: getSearchBtn},
+        {default: getResetBtn},
+    ] = await Promise.all([
+        import('/scripts/containers/word-container.js'),
+        import('/scripts/containers/letters-container.js'),
+        import('/scripts/containers/filter-container.js'),
+        import('/scripts/containers/result-container.js'),
+        import('/scripts/containers/btn-container.js'),
+        import('/scripts/buttons/search.js'),
+        import('/scripts/buttons/reset.js')
+    ]);
 
     //init input word
     const {wordContainer, wordInputs} = getWordContainer(count);
