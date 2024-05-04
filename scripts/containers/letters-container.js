@@ -1,10 +1,10 @@
-import ALPHABET from '../alphabet.js';
+import alphabet from '../alphabet.js';
 
-export default function(onClick){
+export default function(onClick, lang){
     const lettersContainer = document.createElement('div');
     lettersContainer.classList.add('letters-container');
     const lettersBtn = [];
-    ALPHABET.forEach(letter => {
+    alphabet[lang].items.forEach(letter => {
         const letterBtn = document.createElement('button');
         letterBtn.innerHTML = letter;
         letterBtn.addEventListener('click', onClick);

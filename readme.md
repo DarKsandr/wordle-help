@@ -1,3 +1,4 @@
-Помощник для игры в Wordle RU.
+Помощник для игры в Wordle.
 
-[Словарь](https://github.com/danakt/russian-words)
+[Словарь RU](https://github.com/danakt/russian-words)
+[Словарь EN](https://github.com/matthewreagan/WebstersEnglishDictionary)

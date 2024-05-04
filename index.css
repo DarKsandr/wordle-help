@@ -111,6 +111,20 @@ button {
     text-align: center;
 }
 
+.home-screen--form{
+    display: grid;
+    gap: 20px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[name="lang"]:checked + label{
+    font-weight: bold;
+}
+
 /* loader */
 .loader {
     width: fit-content;

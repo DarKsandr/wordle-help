@@ -1,6 +1,6 @@
 import getLettersContainer from './letters-container.js';
 
-export default function(count, lettersContainer){
+export default function(count, lettersContainer, lang){
     const lettersFiltersContainer = [];
     const lettersFiltersBtn = [];
 
@@ -20,7 +20,7 @@ export default function(count, lettersContainer){
                     this.classList.add('disable');
                     break;
             }
-        });
+        }, lang);
         letterFilter.lettersContainer.classList.add('hidden');
         
         btn.addEventListener('click', function(){
