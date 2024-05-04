@@ -44,13 +44,13 @@ import getErrorContainer from './scripts/containers/error-container.js';
         {default: getSearchBtn},
         {default: getResetBtn},
     ] = await Promise.all([
-        import('/scripts/containers/word-container.js'),
-        import('/scripts/containers/letters-container.js'),
-        import('/scripts/containers/filter-container.js'),
-        import('/scripts/containers/result-container.js'),
-        import('/scripts/containers/btn-container.js'),
-        import('/scripts/buttons/search.js'),
-        import('/scripts/buttons/reset.js')
+        import('./scripts/containers/word-container.js'),
+        import('./scripts/containers/letters-container.js'),
+        import('./scripts/containers/filter-container.js'),
+        import('./scripts/containers/result-container.js'),
+        import('./scripts/containers/btn-container.js'),
+        import('./scripts/buttons/search.js'),
+        import('./scripts/buttons/reset.js'),
     ]);
 
     //init input word
